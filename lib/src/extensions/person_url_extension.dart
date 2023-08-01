@@ -4,9 +4,9 @@ extension UrlString on PersonUrl {
   String get urlString {
     switch (this) {
       case PersonUrl.persons1:
-        return 'http://127.0.0.1:5500/api/persons1.json';
+        return 'put here [persons1] json file API using Live server extension on VSCode';
       case PersonUrl.persons2:
-        return 'http://127.0.0.1:5500/api/persons2.json';
+        return 'put here [persons]2 json file API using Live server extension on VSCode';
     }
   }
 }
