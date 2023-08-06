@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:simple_bloc_example/src/model/person.dart';
+import 'package:simple_bloc_example/src/bloc/person.dart';
 
 class PersonApi {
   static Future<Iterable<Person>> getPersons(String url) => HttpClient()
