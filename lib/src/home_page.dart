@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:simple_bloc_example/src/bloc/fetch_result.dart';
-import 'package:simple_bloc_example/src/bloc/load_action.dart';
+import 'package:simple_bloc_example/src/api/get_persons_api.dart';
+import 'package:simple_bloc_example/src/bloc/bloc_actions.dart';
 import 'package:simple_bloc_example/src/bloc/person_bloc.dart';
 import 'package:simple_bloc_example/src/extensions/iterable_extension.dart';
 import 'package:simple_bloc_example/src/extensions/log_extension.dart';
-import 'package:simple_bloc_example/src/model/person_url.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -32,7 +31,8 @@ class _HomePageState extends State<HomePage> {
                 TextButton(
                   onPressed: () => context.read<PersonsBloc>().add(
                         const LoadPersonsAction(
-                          url: PersonUrl.persons1,
+                          url: person1Url,
+                          loader: PersonApi.getPersons,
                         ),
                       ),
                   child: const Text('Load json #1'),
@@ -40,7 +40,8 @@ class _HomePageState extends State<HomePage> {
                 TextButton(
                   onPressed: () => context.read<PersonsBloc>().add(
                         const LoadPersonsAction(
-                          url: PersonUrl.persons2,
+                          url: person2Url,
+                          loader: PersonApi.getPersons,
                         ),
                       ),
                   child: const Text('Load json #2'),
